@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimonials</title>
+    <style>
+      .container {
+        display: flex;
+        border: 2px solid #ccc;
+        background-color: #eee;
+        border-radius: 5px;
+        padding: 16px;
+        margin: 16px 0;
+        gap: 20px;
+      }
+      .container img {
+        max-width: 100%;
+        border-radius: 50%;
+      }
+      .container .img-container {
+        flex: 1 1 25%;
+      }
+      .container .content {
+        align-self: center;
+        flex: 1 1 75%;
+      }
+      .container span {
+        font-size: 20px;
+        margin-right: 15px;
+      }
+      @media (max-width: 500px) {
+        .container {
+          flex-direction: column;
+          align-items: center;
+        }
+        .container .img-container {
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="img-container">
+        <img src="/w3images/bandmember.jpg" alt="Avatar" />
+      </div>
+      <div class="content">
+        <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
+        <p>John Doe saved us from a web disaster.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="img-container">
+        <img src="/w3images/avatar_g2.jpg" alt="Avatar" />
+      </div>
+      <div class="content">
+        <p><span>Rebecca Flex.</span> CEO at Company.</p>
+        <p>No one is better than John Doe.</p>
+      </div>
+    </div>
+  </body>
+</html>

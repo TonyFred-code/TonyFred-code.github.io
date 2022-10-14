@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="/assets/fontawesome-free/fontawesome-free-6.2.0-web/css/all.css"
+    />
+    <title>Social Login Form</title>
+    <style>
+      /* general styles */
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      /* style the container */
+      .container {
+        position: relative;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px 0 30px 0;
+      }
+
+      /* style input and link buttons */
+      input,
+      .btn {
+        width: 100%;
+        border: none;
+        padding: 12px;
+        border-radius: 4px;
+        margin: 5px 0;
+        opacity: 0.85;
+        display: inline-block;
+        font-size: 17px;
+        line-height: 17px;
+        text-decoration: none;
+      }
+      input:hover,
+      .btn:hover {
+        opacity: 1;
+      }
+
+      /* adding appropriate colors to fb, twitter and google buttons */
+      .fb {
+        background-color: #3b5998;
+        color: white;
+      }
+
+      .twitter {
+        background-color: #55acee;
+        color: white;
+      }
+
+      .google {
+        background-color: #dd4b39;
+        color: white;
+      }
+
+      /* style the submit buttons */
+      input[type="submit"] {
+        background-color: #4daf50;
+        color: white;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      /* two column layout */
+      .row {
+        display: flex;
+      }
+      .col {
+        flex: 50%;
+        margin: auto;
+        padding: 0 50px;
+        margin-top: 6px;
+      }
+
+      /* vertical line */
+      .vl {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        border: 2px solid #ccc;
+        height: 175px;
+      }
+      /* text inside vertical line */
+      .vl-innertext {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #f1f1f1;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        padding: 8px 10px;
+      }
+
+      /* hide some text on medium and large screens */
+      .hide-md-lg {
+        display: none;
+      }
+
+      /* bottom container */
+      .bottom-container {
+        text-align: center;
+        background-color: #666;
+        border-radius: 0 0 4px 4px;
+      }
+
+      /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 650px) {
+        .row {
+          flex-flow: column;
+        }
+        .col {
+          flex: 100%;
+          margin-top: 0;
+        }
+        /* hide vertical line */
+        .vl {
+          display: none;
+        }
+        /* show the hidden text on small screens */
+        .hide-md-lg {
+          display: block;
+          text-align: center;
+        }
+        form .hr_1,
+        .hide-md-lg {
+          margin-bottom: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="/action.php">
+        <h2 style="text-align: center">Login with Social Media or Manually</h2>
+        <div class="row">
+          <!-- horizontal rule with text -->
+          <div class="vl">
+            <span class="vl-innertext">or</span>
+          </div>
+
+          <!-- social login section -->
+          <div class="col hr_1">
+            <a href="#" class="fb btn">
+              <i class="fab fa-facebook fa-fw"></i> Login with Facebook
+            </a>
+            <a href="#" class="twitter btn">
+              <i class="fab fa-twitter fa-fw"></i> Login with Twitter
+            </a>
+            <a href="#" class="google btn">
+              <i class="fab fa-google-plus fa-fw"></i> Login with Google+
+            </a>
+          </div>
+
+          <!-- Manual login section -->
+          <div class="col hr_2">
+            <div class="hide-md-lg">Or sign in manually:</div>
+
+            <input
+              type="text"
+              name="username"
+              id="uname"
+              placeholder="Username"
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              id="pword"
+              placeholder="Password"
+              required
+            />
+            <input type="submit" value="Login" />
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- bottom container section -->
+    <div class="bottom-container">
+      <div class="row">
+        <div class="col">
+          <a href="#" class="btn" style="color: white">Sign up</a>
+        </div>
+        <div class="col">
+          <a href="#" class="btn" style="color: white">Forgot password?</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

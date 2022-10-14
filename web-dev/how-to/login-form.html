@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      form {
+        border: 3px solid #f1f1f1;
+        margin-left: auto;
+        margin-right: auto;
+        width: 75%;
+        max-width: 800px;
+      }
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        cursor: pointer;
+        border: none;
+        width: 100%;
+      }
+      button:hover {
+        opacity: 0.8;
+      }
+
+      .cancelBtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #f44336;
+      }
+      .img-container {
+        text-align: center;
+        margin: 24px 0 12px 0;
+      }
+      img.avatar {
+        width: 40%;
+        border-radius: 50%;
+      }
+      .container {
+        padding: 16px;
+      }
+      .btn-psw {
+        display: flex;
+        justify-content: space-between;
+      }
+      span.psw {
+        padding-top: 16px;
+      }
+      @media screen and (width <= 400px) {
+        .btn-psw {
+          flex-flow: column nowrap;
+          align-content: center;
+        }
+        span.psw {
+          margin-right: auto;
+          margin-left: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <form action="action.php">
+      <div class="img-container">
+        <img src="/w3images/avatar2.png" alt="Avatar" class="avatar" />
+      </div>
+
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input
+          type="text"
+          placeholder="Enter Username"
+          name="uname"
+          id="uname"
+          required
+        />
+
+        <label for="psw"><b>Password</b></label>
+        <input
+          type="password"
+          name="psw"
+          placeholder="Enter Password"
+          id="psw"
+        />
+
+        <button type="submit">Login</button>
+        <label>
+          <input
+            type="checkbox"
+            name="remember"
+            id="remember"
+            checked
+          />Remember me
+        </label>
+      </div>
+
+      <div class="container btn-psw" style="background-color: #f1f1f1">
+        <button type="button" class="cancelBtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+      </div>
+    </form>
+  </body>
+
+  <!-- Mirrored from www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Jul 2018 02:03:13 GMT -->
+  <!-- Reedited by Alfred Faith -- 1st of September, 2022 -->
+</html>

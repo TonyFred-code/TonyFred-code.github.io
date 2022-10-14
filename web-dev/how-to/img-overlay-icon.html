@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/fontawesome-free/fontawesome-free-6.2.0-web/css/all.css" />
+    <title>Image Overlay Icon</title>
+    <style>
+      /* style the container */
+      .container {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+      }
+      /* style the image itself */
+      .image {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      /* container for overlay */
+      .overlay {
+        position:absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .3s ease;
+        background-color: red;
+      }
+      /* display on hover */
+      .container:hover .overlay {
+        opacity: 1;
+      }
+
+      /* style the icon */
+      .icon {
+        font-size: 100px;
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      /* change color on hover */
+      .fa-user:hover {
+        color: #eee;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="/w3images/avatar3.png" class="image" alt="Avatar Icon" />
+      <div class="overlay">
+        <a href="#" class="icon" title="User Profile">
+          <i class="fas fa-user"></i>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../assets/fontawesome-free/fontawesome-free-6.2.0-web/css/all.css"
+    />
+    <title>Animated Icons</title>
+    <style>
+      div {
+        font-size: 48px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1" class="fas"></div>
+    <hr />
+    <div id="div2" class="fas"></div>
+    <hr />
+    <div id="div3" class="fas"></div>
+
+    <script>
+      function chargebattery() {
+        var a;
+        a = document.getElementById("div1");
+        a.innerHTML = "&#xf244;";
+        setTimeout(function () {
+          a.innerHTML = "&#xf243;";
+        }, 1000);
+        setTimeout(function () {
+          a.innerHTML = "&#xf242;";
+        }, 2000);
+        setTimeout(function () {
+          a.innerHTML = "&#xf241;";
+        }, 3000);
+        setTimeout(function () {
+          a.innerHTML = "&#xf240;";
+        }, 4000);
+      }
+      chargebattery();
+      setInterval(chargebattery, 5000);
+
+      // hour-glass animation
+      function hourglass() {
+        var a;
+        a = document.getElementById("div2");
+        a.innerHTML = "&#xf251;";
+        setTimeout(function () {
+          a.innerHTML = "&#xf252;";
+        }, 1000);
+        setTimeout(function () {
+          a.innerHTML = "&#xf253;";
+        }, 2000);
+      }
+      hourglass();
+      setInterval(hourglass, 3000);
+
+      function brakechain() {
+        var a;
+        a = document.getElementById("div3");
+        a.innerHTML = "&#xf0c1;";
+        setTimeout(function () {
+          a.innerHTML = "&#xf127;";
+        }, 1000);
+      }
+      brakechain();
+      setInterval(brakechain, 2000);
+    </script>
+  </body>
+</html>

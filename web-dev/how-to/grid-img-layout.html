@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Img Gallery</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .content {
+        position: relative;
+      }
+
+      .content img {
+        display: block;
+        max-width: 100%;
+      }
+      .text-block {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: black;
+        color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(250px, 1fr));
+        margin: 12px;
+        gap: 12px;
+      }
+      @media screen and (width <= 1000px) {
+        .wrapper {
+          grid-template-columns: repeat(2, minmax(250px, 1fr));
+        }
+      }
+      @media screen and (width <= 600px) {
+        .wrapper {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content">
+        <img src="/w3images/house4.jpg" alt="House" />
+        <div class="text-block">
+          <p>Summer House</p>
+        </div>
+      </div>
+      <div class="content">
+        <img src="/w3images/house4.jpg" alt="House" />
+        <div class="text-block">
+          <p>Summer House</p>
+        </div>
+      </div>
+      <div class="content">
+        <img src="/w3images/house4.jpg" alt="House" />
+        <div class="text-block">
+          <p>Summer House</p>
+        </div>
+      </div>
+      <div class="content">
+        <img src="/w3images/house4.jpg" alt="House" />
+        <div class="text-block">
+          <p>Summer House</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="wrapper">
+       <div class="content">
+        <img src="/w3images/house4.jpg" alt="House" />
+        <div class="text-block">
+          <p>Summer House</p>
+        </div>
+      </div>
+      <div class="content">
+        <img src="/w3images/house4.jpg" alt="House" />
+        <div class="text-block">
+          <p>Summer House</p>
+        </div>
+      </div>
+      <div class="content">
+        <img src="/w3images/house4.jpg" alt="House" />
+        <div class="text-block">
+          <p>Summer House</p>
+        </div>
+      </div>
+      <div class="content">
+        <img src="/w3images/house4.jpg" alt="House" />
+        <div class="text-block">
+          <p>Summer House</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

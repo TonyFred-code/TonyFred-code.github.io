@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/fontawesome-free/fontawesome-free-6.2.0-web/css/all.css" />
+    <title>Icon Menu Bar (Vertical and Horizontal)</title>
+    <style>
+      /* general styles */
+      html {
+        font-size: 10px;
+      }
+      html,
+      body {
+        box-sizing: border-box;
+      }
+      *,
+      *::after,
+      *::before {
+        box-sizing: inherit;
+      }
+      /* !vertical  icon menu bar */
+      #vertical.icon-bar {
+        width: 100px;
+        display: flex;
+        flex-direction: column;
+        background-color: #333;
+      }
+      #vertical.icon-bar a {
+        display: block;
+        text-align: center;
+        padding: 1.6rem;
+        text-decoration: none;
+        color: white;
+        font-size: 3.6rem;
+        transition: all 0.3s ease;
+      }
+      #vertical.icon-bar a:hover {
+        background-color: #000;
+      }
+      #vertical .active {
+        background-color: #4caf50;
+      }
+
+      /* !horizontal icon menu bar */
+      #horizontal.icon-bar {
+        width: 100%;
+        background-color: #555;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+      }
+      #horizontal.icon-bar a {
+        color: white;
+        font-size: 3.6rem;
+        flex: 1 1 20%;
+        text-align: center;
+        padding: 1.6rem;
+        transition: all 0.3s ease-in-out;
+      }
+      #horizontal.icon-bar a:hover:not(.active) {
+        background-color: #000;
+      }
+      #horizontal .active {
+        background-color: #4acf50;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- vertical icon menu bar -->
+    <h2>Vertical Icon Menu Bar</h2>
+    <div id="vertical" class="icon-bar">
+      <a href="#" class="active"><i class="fas fa-home"></i></a>
+      <a href="#"><i class="fas fa-search"></i></a>
+      <a href="#"><i class="fas fa-envelope"></i></a>
+      <a href="#"><i class="fas fa-globe-africa"></i></a>
+      <a href="#"><i class="fas fa-trash"></i></a>
+    </div>
+    <hr />
+
+    <!-- Horizontal Menu Bar -->
+    <h2>Horizontal Icon Menu Bar</h2>
+    <div id="horizontal" class="icon-bar">
+      <a href="#" class="active"><i class="fas fa-home"></i></a>
+      <a href="#"><i class="fas fa-search"></i></a>
+      <a href="#"><i class="fas fa-envelope"></i></a>
+      <a href="#"><i class="fas fa-globe-africa"></i></a>
+      <a href="#"><i class="fas fa-trash"></i></a>
+    </div>
+  </body>
+</html>

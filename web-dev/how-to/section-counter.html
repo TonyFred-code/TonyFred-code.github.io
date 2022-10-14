@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="/assets/fontawesome-free/fontawesome-free-6.2.0-web/css/all.css"
+    />
+    <title>Responsive Section Counter</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .column {
+        flex: 25%;
+        padding: 0 5px;
+      }
+
+      .row {
+        display: flex;
+      }
+
+      /* Responsive columns */
+      @media screen and (max-width: 600px) {
+        .row {
+          display: block;
+        }
+        .column {
+          width: 100%;
+          display: block;
+          margin-bottom: 10px;
+        }
+      }
+
+      /* Style the counter cards */
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        text-align: center;
+        background-color: #444;
+        color: white;
+      }
+
+      .fa {
+        font-size: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <p><i class="fas fa-user"></i></p>
+          <h3>11+</h3>
+          <p>Partners</p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <p><i class="fas fa-check"></i></p>
+          <h3>55+</h3>
+          <p>Projects</p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <p><i class="fas fa-smile"></i></p>
+          <h3>100+</h3>
+          <p>Happy Clients</p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <p><i class="fas fa-coffee"></i></p>
+          <h3>100+</h3>
+          <p>Meetings</p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- Mirrored from www.w3schools.com/howto/tryit.asp?filename=tryhow_css_form_icon by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Jul 2018 02:09:42 GMT -->
+
+  <!-- Reedited by Alfred Faith 31 August, 2022-->
+</html>

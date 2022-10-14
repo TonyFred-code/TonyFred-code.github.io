@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/bootstrap-icons/bootstrap-icons.css" />
+    <title>To-Do List</title>
+    <style>
+      /* to include both the padding and border of an element */
+      /* in its total width */
+      html,
+      body {
+        box-sizing: border-box;
+      }
+      *,
+      *::after,
+      *::before {
+        box-sizing: inherit;
+      }
+      /* style the body */
+      body {
+        margin: 0 auto; /* center the page */
+        min-width: 250px;
+        width: 75%;
+      }
+      /* Style the header */
+      header {
+        background-color: #f44336;
+        padding: 35px;
+        color: white;
+        text-align: center;
+      }
+      /* Remove margins and padding from the list */
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      ul li {
+        background-color: #eee;
+        font-size: 18px;
+        transition: all 0.2s ease-in-out;
+        user-select: none;
+        display: flex;
+        gap: 12px;
+      }
+
+      /* Set all odd list items to a different color (zebra-stripes) */
+      ul li:nth-child(odd) {
+        background: #f9f9f9;
+      }
+
+      /* Darker background-color on hover */
+      ul li:hover {
+        background: #ddd;
+      }
+
+      /* When clicked on, add a background color and strike out text */
+      ul li.checked {
+        background: #888;
+        color: #fff;
+        text-decoration: line-through;
+      }
+      ul li span {
+        padding: 12px;
+      }
+      /* close icon */
+      span.delete {
+        margin-left: auto;
+        cursor: pointer;
+      }
+      span.delete:hover {
+        background-color: red;
+        color: white;
+      }
+      /* default state icon */
+      span.state {
+        cursor: pointer;
+      }
+      span.state:hover {
+        background-color: green;
+        color: white;
+      }
+      /* checked state icon */
+      span.checked {
+        background-color: green;
+        color: white;
+      }
+      span.checked:active,
+      span.state:active {
+        background-color: #4acf50;
+      }
+      /* input */
+      #myDiv {
+        display: flex;
+        margin: 12px 0;
+      }
+      input[type="text"] {
+        border: 1px solid #ddd;
+        flex: 1 1 70%;
+        padding: 10px;
+        border-radius: 0;
+        font-size: 16px;
+        margin: 0;
+      }
+      input[type="text"]:focus {
+        outline: 0;
+        border-style: solid;
+        border-color: #d9d9d9;
+        border-width: 2px;
+      }
+
+      #addBtn {
+        flex: 1 1 15%;
+        color: black;
+        border: 0;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 0;
+        background-color: #d9d9d9;
+        text-align: center;
+        transition: 0.3s;
+        padding: 10px;
+      }
+      #addBtn:hover {
+        background-color: #bbb;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>My To Do List (work in progress...doesn't work properly)*</h2>
+    </header>
+    <div id="myDiv">
+      <input type="text" name="myInput" placeholder="Task..." id="myInput" />
+      <button id="addBtn"><i class="bi bi-plus-square"></i></button>
+    </div>
+
+    <ul id="myList"></ul>
+    <script>
+      const myNodeList = document.getElementsByTagName("li");
+      const deleteIcon = document.getElementsByClassName("delete");
+      const stateIcon = document.getElementsByClassName("state");
+      const input = document.getElementById("myInput");
+      const addBtn = document.getElementById("addBtn");
+      const myUl = document.getElementById("myList");
+      // Click on close icon to delete current list item
+      for (let i = 0; i < deleteIcon.length; i++) {
+        deleteIcon[i].addEventListener("click", hide);
+      }
+      function hide() {
+        let parent = this.parentElement;
+        parent.style.display = "none";
+      }
+      // Change circle to checked circle when clicked.
+      for (let i = 0; i < stateIcon.length; i++) {
+        stateIcon[i].addEventListener("click", changeState);
+      }
+      function changeState() {
+        let current = this;
+        let parent = current.parentElement;
+        let trash = parent.lastElementChild;
+        if (current.classList.contains("checked")) {
+          current.classList.remove("checked");
+          current.classList.replace("bi-check2-circle", "bi-circle");
+          trash.classList.replace("bi-trash", "bi-x-lg");
+        } else {
+          current.classList.add("checked");
+          current.classList.replace("bi-circle", "bi-check2-circle");
+          trash.classList.replace("bi-x-lg", "bi-trash");
+        }
+        parent.classList.toggle("checked");
+      }
+
+      // create a new list item when clicking on the add button.
+      function newTask() {
+        const li = document.createElement("li");
+        const content = document.createElement("span");
+        const deleteIcon = document.createElement("span");
+        const stateIcon = document.createElement("span");
+        content.textContent = input.value;
+        input.value = "";
+        content.classList.add("content");
+        stateIcon.classList.add("bi", "bi-circle", "state");
+        deleteIcon.classList.add("bi", "bi-x-lg", "delete");
+        li.appendChild(stateIcon);
+        li.appendChild(content);
+        li.appendChild(deleteIcon);
+        if (content.textContent === "") {
+          alert("You must write in a task");
+        } else {
+          myUl.appendChild(li);
+        }
+        let state = document.getElementsByClassName("state");
+        let trashBtn = document.getElementsByClassName("delete");
+        for (let i = 0; i < state.length; i++) {
+          state[i].addEventListener("click", changeState);
+        }
+        for (let i = 0; i < trashBtn.length; i++) {
+          trashBtn[i].addEventListener("click", hide);
+        }
+      }
+      let current = new Date();
+      let currentTime = current.getTime();
+      console.log(currentTime);
+      addBtn.addEventListener("click", newTask);
+      addBtn.addEventListener("click", setTime);
+      input.addEventListener("keyup", (event) => {
+        if (event.keyCode === 13) {
+          addBtn.click();
+        }
+      });
+    </script>
+  </body>
+</html>
